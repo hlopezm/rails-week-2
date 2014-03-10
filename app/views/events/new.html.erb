@@ -1,2 +1,14 @@
 <h1>Events#new</h1>
+<p>Please fill the fields required: </p>
+
+<%= form_for(@event) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :description %>
+  <%= f.text_field :address %>
+  <%= f.date_field :start_at%>
+  <%= f.date_field :end_at %>
+<%= f.submit %>
+<% end %>
+
+
 <p>Find me in app/views/events/new.html.erb</p>
