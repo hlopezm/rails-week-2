@@ -18,7 +18,8 @@ class Event < ActiveRecord::Base
 ###Aplicando Scope
 
 def self.for_today
-  where(["DATE(start_at) = ?", Date.today])
+  where(["DATE(start_at) = ? AND description = ?", Date.today, "hi"])
+
 end
 
 
