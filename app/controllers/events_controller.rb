@@ -1,23 +1,38 @@
 class EventsController < ApplicationController
+   
+   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
-    @events = Event.all
+    @events = Event.for_today
   end
 
   def show
     @event = Event.find(params[:id])
+    
   end
 
   def new
     @event = Event.new
+    authorize @event
   end
 
   def create
     @event = Event.create(event_params)
-    redirect_to @events
+    #Creamos la asociacion con factoryGirl
+    @event.user = current_user
+    
+    authorize @event
+    if @event.save
+        redirect_to @event
+    else
+       render :new
+    end
   end
 
   def edit
     @event = Event.find(params[:id])
+
+    authorize @event
   end
 
   def update
@@ -32,10 +47,17 @@ class EventsController < ApplicationController
   def destroy
     @events = Event.where   
   end
+  
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   private
 
   def event_params
        params.require(:event).permit(:name, :description, :start_at, :end_at, :address)
+  end
+
+  def not_found
+    flash[:error] = "Event does not exist"
+    render action: 'not_found'
   end
 end
