@@ -34,7 +34,8 @@ end
 
 gem 'devise'
 gem 'bcrypt'
-gem "pundit"
+gem 'pundit'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'rspec-rails'
