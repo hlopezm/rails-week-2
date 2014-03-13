@@ -52,6 +52,10 @@ class EventsController < ApplicationController
   def destroy
     @events = Event.where   
   end
+
+  def search
+    @event = Event.where( 'name LIKE %?%', params[:terms])
+  end
   
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 

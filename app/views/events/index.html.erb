@@ -1,4 +1,7 @@
 <h1>Events#index</h1>
+
+<%= text_field_tag "search" %>
+
 <% @events.each do |event| %>
   <%= debug(event)  %>
   <% end %>
