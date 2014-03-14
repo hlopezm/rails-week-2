@@ -24,12 +24,15 @@ class Event < ActiveRecord::Base
     where(["DATE(start_at) = ? ", Date.today ])
   end
 
+  scope :name_like, lambda { |name|
+		where (["name like ?", "%#{name}%"])
+	}
 
     private
 
   def start_at_blank
     if start_at.blank?
-      errors.add(:start_at, "Start date can't be blank") 
+      errors.add(:start_at, "Start date can't be blank")
     end
   end
 
@@ -45,4 +48,3 @@ class Event < ActiveRecord::Base
   end
 
 end
-

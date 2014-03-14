@@ -3,8 +3,7 @@ class EventsController < ApplicationController
    before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
-
+    @events = Event.for_today
     respond_to do |format|
       format.html # index.html.erb
       format.json
@@ -54,9 +53,10 @@ class EventsController < ApplicationController
   end
 
   def search
-    @event = Event.where( 'name LIKE %?%', params[:terms])
-  end
-  
+	@events = Event.name_like(params[:term])
+	end
+
+
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   private
