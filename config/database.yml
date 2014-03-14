@@ -19,8 +19,13 @@ development:
   encoding: unicode
   database: iron_event_development
   pool: 5
+<<<<<<< HEAD
   username: ror
   password: webdevror
+=======
+  username: vagrant
+  password: 
+>>>>>>> 422a99bb7ef993908662150f75c3786f6ffd0acb
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,15 +53,25 @@ test:
   encoding: unicode
   database: iron_event_test
   pool: 5
+<<<<<<< HEAD
   username: ror
   password: webdevror
+=======
+  username: vagrant
+  password:
+>>>>>>> 422a99bb7ef993908662150f75c3786f6ffd0acb
 
 production:
   adapter: postgresql
   encoding: unicode
   database: iron_event_production
   pool: 5
+<<<<<<< HEAD
   username: ror
   password: webdevror
 
+=======
+  username: vagrant
+  password:
+>>>>>>> 422a99bb7ef993908662150f75c3786f6ffd0acb
 
