@@ -47,8 +47,5 @@ class Event < ActiveRecord::Base
     end
   end
 
-<<<<<<< HEAD
 end
-=======
 
->>>>>>> 422a99bb7ef993908662150f75c3786f6ffd0acb

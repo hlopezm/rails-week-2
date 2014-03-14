@@ -44,12 +44,12 @@ class EventsController < ApplicationController
     if @event.update_attributes(event_params)
       redirect_to event_path(@event)
     else
-     render edit 
+     render edit
     end
   end
 
   def destroy
-    @events = Event.where   
+
   end
 
   def search
