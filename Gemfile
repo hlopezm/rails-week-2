@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -36,6 +36,7 @@ gem 'devise'
 gem 'bcrypt'
 gem 'pundit'
 gem 'jquery-ui-rails'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'rspec-rails'
