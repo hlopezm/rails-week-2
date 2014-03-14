@@ -17,10 +17,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: timetracking_development
+  database: iron_event_development
   pool: 5
   username: vagrant
-  password: vagrant
+  password: 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -46,16 +46,16 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: timetracking_test
+  database: iron_event_test
   pool: 5
   username: vagrant
-  password: vagrant
+  password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: timetracking_production
+  database: iron_event_production
   pool: 5
   username: vagrant
-  password: vagrant
+  password:
 
