@@ -54,9 +54,10 @@ class EventsController < ApplicationController
   end
 
   def search
-    @event = Event.where( 'name LIKE %?%', params[:terms])
-  end
-  
+	@events = Event.name_like(params[:term])
+	end
+
+
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   private

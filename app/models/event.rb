@@ -24,6 +24,9 @@ class Event < ActiveRecord::Base
     where(["DATE(start_at) = ? ", Date.today ])
   end
 
+  scope :name_like, lambda { |name|
+		where (["name like ?", "%#{name}%"])
+	}
 
     private
 
@@ -44,5 +47,4 @@ class Event < ActiveRecord::Base
     end
   end
 
-end
 
